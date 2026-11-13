@@ -147,3 +147,28 @@ Build the following routes:
 - Delete stale branches on GitHub.
 - Remove unnecessary or commented-out code.
 - Update `.gitignore` if needed to exclude sensitive data
+
+## Completed Application
+
+This Flask application provides routes for looking up contracts and confirming whether customers exist.
+
+| Route | Found | Not found |
+| --- | --- | --- |
+| `/contract/<int:id>` | Returns contract information with status 200 | Returns "Contract not found" with status 404 |
+| `/customer/<customer_name>` | Returns an empty body with status 204 | Returns "Customer not found" with status 404 |
+
+Contract IDs must be integers. Customer names are case-sensitive.
+
+## Testing
+
+Run the provided tests from the project root:
+
+```bash
+pipenv run pytest
+```
+
+Result: All 6 tests passed.
+
+## Screenshot
+
+![All six tests passing](screenshots/tests-passed.png)
